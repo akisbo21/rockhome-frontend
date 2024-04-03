@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  rockhome-frontend:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 8100:8100
+    volumes:
+      - ./app/src:/srv/src
+      - ./app/vue.config.js:/srv/vue.config.js
+    environment:
+      VUE_APP_ROCK_BACKEND: 'http://localhost'
+    entrypoint: [npm, run, serve]
+
+networks:
+  default:
+    external:
+      name: rockhome-network
