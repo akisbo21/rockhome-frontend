@@ -1,12 +1,10 @@
 <template>
     <v-container>
         <v-row>
-            <v-col
-                    v-for="item in items"
-                    :key="item.external_id"
-                    cols="4"
-            >
-                <v-card height="300"
+            <v-col cols="12" xs="12" sm="6" lg="4" v-for="item in items">
+                <v-card
+                        :key="item.external_id"
+                        height="300"
                         :href="'/ingatlan/adatlap/' + item.external_id"
                 >
                     <v-card-title>
@@ -28,6 +26,7 @@
                 </v-card>
             </v-col>
         </v-row>
+
     </v-container>
 </template>
 
